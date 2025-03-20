@@ -10,7 +10,7 @@ This can be easily installed using Docker compose.
 ```docker-compose
 services:
   network-watcher:
-    image: ghrc.io/s3tupw1zard/pelican-panel-netwatch:latest
+    image: ghcr.io/s3tupw1zard/pelican-panel-netwatch:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
