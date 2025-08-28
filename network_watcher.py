@@ -16,14 +16,14 @@ def watch_networks():
             if labels.get("network_watcher") != "true":
                 continue
 
-            # Find labels that start with 'network_watcher.' but do not end with '.ip'
+            # Find labels that start with 'network_watcher_network_' but do not end with '_ip'
             network_labels = {
                 k: v for k, v in labels.items()
-                if k.startswith("network_watcher.network.") and not k.endswith(".ip")
+                if k.startswith("network_watcher_network_") and not k.endswith("_ip")
             }
 
             for network_label, network_name in network_labels.items():
-                ip_label = f"{network_label}.ip"
+                ip_label = f"{network_label}_ip"
 
                 if ip_label not in labels:
                     print(f"[WARN] Missing IP address for network {network_name} in container {container.name}.")
